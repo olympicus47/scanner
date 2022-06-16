@@ -1,29 +1,8 @@
 <template>
   <div class="container">
-    <tr>
-      <td>
-        <button :class="{ active: toggleState1 }">
-          <h1>Hello1</h1>
-        </button>
-      </td>
-      <td>
-        <button :class="{ active: toggleState2 }">
-          <h1>Hello2</h1>
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <button :class="{ active: toggleState3 }">
-          <h1>Hello3</h1>
-        </button>
-      </td>
-      <td>
-        <button :class="{ active: toggleState4 }">
-          <h1>Hello4</h1>
-        </button>
-      </td>
-    </tr>
+    <button class="colorat">
+      <h1>{{ continut }}</h1>
+    </button>
   </div>
 </template>
 
@@ -31,22 +10,43 @@
 export default {
   data() {
     return {
-      toggleState1: false,
-      toggleState2: false,
-      toggleState3: false,
-      toggleState4: false,
+      toggleState: false,
     };
+  },
+  props: { continut: String, culoare: String },
+  computed: {
+    // style() {
+    //   // console.log(this.culoare);
+    //   return this.culoare;
+    // },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-button {
-  display: inline-flex;
-  max-width: 20em;
-  max-height: 20em;
-}
-.container {
+button,
+h1 {
   display: flex;
+  flex: 1;
+  flex-basis: 100%;
+  flex-wrap: wrap;
+  max-height: 32vh;
+  max-width: 42vw;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  padding: 3em;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 8vw;
+  padding: 0;
+  margin: 1em;
+}
+button.colorat {
+  background-color: v-bind("culoare");
+  margin: 1em;
 }
 </style>
