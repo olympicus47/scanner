@@ -1,5 +1,8 @@
 <template>
-  <router-view />
+  <section>
+    <h1 class="fs-1 px-3 py-3 mx-3 my-3">Inventar Simplist</h1>
+    <router-view />
+  </section>
 </template>
 
 <style lang="scss">

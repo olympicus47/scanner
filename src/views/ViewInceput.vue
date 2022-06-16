@@ -1,24 +1,29 @@
 <template>
-  <h1>Inventar Simplist</h1>
-  <div class="container">
+  <div class="container postion relative">
     <tr>
       <td>
         <router-link to="/"
-          ><ButtonComponent :culoare="culoareInventar" continut="Inventar"
+          ><ButtonComponent continut="Inventar" culoare="btn-warning"
         /></router-link>
       </td>
       <td>
-        <router-link to="/"><ButtonComponent continut="Vinde" /></router-link>
+        <router-link to="/"
+          ><ButtonComponent continut="Vinde" culoare="btn-success"
+        /></router-link>
       </td>
     </tr>
   </div>
   <div class="container">
     <tr>
       <td>
-        <router-link to="/"><ButtonComponent continut="Trimite" /></router-link>
+        <router-link to="/"
+          ><ButtonComponent continut="Trimite" culoare="btn-danger"
+        /></router-link>
       </td>
       <td>
-        <router-link to="/"><ButtonComponent continut="Cauta" /></router-link>
+        <router-link to="/"
+          ><ButtonComponent continut="Cauta" culoare="btn-info"
+        /></router-link>
       </td>
     </tr>
   </div>
@@ -33,9 +38,7 @@ export default {
     ButtonComponent,
   },
   data() {
-    return {
-      culoareInventar: "#fff55",
-    };
+    return {};
   },
 };
 </script>
@@ -44,19 +47,5 @@ export default {
 router-link,
 a {
   text-decoration: none;
-}
-.container {
-  display: flex;
-  width: 100%;
-  max-height: 30vh;
-  flex: 1;
-  flex-basis: 100%;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  align-self: center;
-  padding: 0;
-  margin: 0;
 }
 </style>

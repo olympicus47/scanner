@@ -11,16 +11,23 @@ export default {
   data() {
     return {
       readerSize: {
-        width: 640,
-        height: 480,
+        width: 300,
+        height: 300,
       },
       detecteds: [],
     };
   },
   methods: {
     logIt(data) {
-      console.log("detected", data);
+      let timestamp = Date.now();
+      let read = {};
+      read[timestamp] = data;
+      this.detecteds.append(read);
+      read, (timestamp = [{}, {}]);
     },
+  },
+  props: {
+    instanta: String,
   },
 };
 </script>
